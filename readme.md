@@ -30,8 +30,7 @@ git clone https://github.com/your-username/distributed-kv-store.git
 cd distributed-kv-store
 Cấu hình biến môi trường (trong .env)
 
-env
-Sao chép
+
 Chỉnh sửa
 REDIS_HOST=redis1
 REDIS_PORT=6379
