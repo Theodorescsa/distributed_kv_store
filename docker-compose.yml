@@ -1,0 +1,40 @@
+services:
+  node1:
+    build: .
+    ports:
+      - "8001:8000"
+    environment:
+      - NODE_ID=node1
+      - REDIS_HOST=redis1
+    depends_on:
+      - redis1
+  node2:
+    build: .
+    ports:
+      - "8002:8000"
+    environment:
+      - NODE_ID=node2
+      - REDIS_HOST=redis2
+    depends_on:
+      - redis2
+  node3:
+    build: .
+    ports:
+      - "8003:8000"
+    environment:
+      - NODE_ID=node3
+      - REDIS_HOST=redis3
+    depends_on:
+      - redis3
+  redis1:
+    image: redis:6
+    ports:
+      - "6379:6379"
+  redis2:
+    image: redis:6
+    ports:
+      - "6380:6379"
+  redis3:
+    image: redis:6
+    ports:
+      - "6381:6379"
